@@ -82,3 +82,31 @@ VALUES
     ('ora', 'phoenix', 88, 90, 3.33),
     ('grace', 'miami', 7, 9100, 34.78),
     ('hope', 'phoenix', 4, 10, 50.17);
+
+--1	Anthony moved to Santa Fe.
+INSERT INTO accounts
+    (username, city, transactions_completed, transactions_attempted, account_balance)
+VALUES
+    ('anthony', 'chicago', 0, 0, 0.00);
+--THIS IS HERE TO ADD ANTHONY BACK AS HE WAS DELETED AS PART OF BASE GOAL
+
+UPDATE "accounts"
+SET "city" = 'Santa Fe'
+WHERE "username" = 'anthony';
+
+--2	Grace closed her account.
+INSERT INTO accounts
+    (username, city, transactions_completed, transactions_attempted, account_balance)
+VALUES
+    ('grace', 'miami', 7, 9100, 34.78);
+--THIS IS HERE TO ADD GRACE BACK AS SHE WAS DELETED AS PART OF BASE GOAL
+
+DELETE FROM "accounts" WHERE "username" = 'grace';
+	
+	
+--3	Travis made a withdrawl of $20,000. What's their new balance? -- NOTE: Research RETURNING
+
+
+
+	
+--4	The Bank needs to track last names.
